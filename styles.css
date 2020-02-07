@@ -63,7 +63,7 @@ header > h1 {
   transition: all 0.3s ease;
 }
 .choice:hover {
-  background-color: #1d1f25;
+  background-color: #5e6e92;
   cursor: pointer;
 }
 #section-message {
