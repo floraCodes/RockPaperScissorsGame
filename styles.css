@@ -5,7 +5,7 @@
   font-family: "Asap", sans-serif;
 }
 body {
-  background-color: #24272e;
+  background-color: #7082ac;
 }
 header {
   background-color: white;
@@ -86,5 +86,5 @@ header > h1 {
   box-shadow: #25292b;
 }
 img {
-  width: 100px;
+  width: 175px;
 }
