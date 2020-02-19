@@ -88,3 +88,11 @@ header > h1 {
 img {
   width: 175px;
 }
+@media screen and (max-width: 600px) {
+  img {
+    width: 80px;
+  }
+  .result {
+    font-size: 20px;
+  }
+}
