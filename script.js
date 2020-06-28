@@ -8,6 +8,9 @@ const rock = document.querySelector('#r');
 const paper = document.querySelector('#p');
 const scissors = document.querySelector('#s');
 
+const smallUserWord = '(user)'.fontsize(3).sub();
+const smallCompWord = '(comp)'.fontsize(3).sub();
+
 function main() {
   rock.addEventListener('click', () => game('r'));
   paper.addEventListener('click', () => game('p'));
@@ -48,27 +51,21 @@ function convertToWord(letter) {
 function userWins(userChoice, computerChoice) {
   userScore++;
   userScoreElement.innerHTML = userScore;
-  computerScoreElement.innerHTML = computerScore;
-  const smallUserWord = '(user)'.fontsize(3).sub();
-  const smallCompWord = '(comp)'.fontsize(3).sub();
   //prettier-ignore
   result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(computerChoice)}${smallCompWord}. You win!`;
   const $userBorder = document.getElementById(userChoice);
   $userBorder.classList.add('green-glow');
-  setTimeout(() => $userBorder.classList.remove('green-glow'), 1000);
+  setTimeout(() => $userBorder.classList.remove('green-glow'), 800);
 }
 
 function userLooses(userChoice, computerChoice) {
   computerScore++;
-  userScoreElement.innerHTML = userScore;
   computerScoreElement.innerText = computerScore;
-  const smallUserWord = '(user)'.fontsize(3).sub();
-  const smallCompWord = '(comp)'.fontsize(3).sub();
   //prettier-ignore
   result.innerHTML = `${convertToWord(computerChoice)}${smallCompWord} beats ${convertToWord(userChoice)}${smallUserWord}. Computer wins!`;
   const $userBorder = document.getElementById(userChoice);
   $userBorder.classList.add('red-glow');
-  setTimeout(() => $userBorder.classList.remove('red-glow'), 1000);
+  setTimeout(() => $userBorder.classList.remove('red-glow'), 800);
 }
 
 function draw() {
