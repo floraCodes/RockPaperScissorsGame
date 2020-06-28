@@ -34,7 +34,7 @@ function game(userChoice) {
     case 'rr':
     case 'pp':
     case 'ss':
-      draw();
+      draw(userChoice);
       break;
   }
 }
@@ -55,7 +55,7 @@ function userWins(userChoice, computerChoice) {
   result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(computerChoice)}${smallCompWord}. You win!`;
   const $userBorder = document.getElementById(userChoice);
   $userBorder.classList.add('green-glow');
-  setTimeout(() => $userBorder.classList.remove('green-glow'), 800);
+  setTimeout(() => $userBorder.classList.remove('green-glow'), 500);
 }
 
 function userLooses(userChoice, computerChoice) {
@@ -65,9 +65,12 @@ function userLooses(userChoice, computerChoice) {
   result.innerHTML = `${convertToWord(computerChoice)}${smallCompWord} beats ${convertToWord(userChoice)}${smallUserWord}. Computer wins!`;
   const $userBorder = document.getElementById(userChoice);
   $userBorder.classList.add('red-glow');
-  setTimeout(() => $userBorder.classList.remove('red-glow'), 800);
+  setTimeout(() => $userBorder.classList.remove('red-glow'), 500);
 }
 
-function draw() {
+function draw(userChoice) {
   result.innerHTML = "It's a Draw!";
+  const $userBorder = document.getElementById(userChoice);
+  $userBorder.classList.add('gray-glow');
+  setTimeout(() => $userBorder.classList.remove('gray-glow'), 500);
 }
